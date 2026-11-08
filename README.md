@@ -1,5 +1,7 @@
 # Atta Ullah — Portfolio
 
+**Open the website → https://eng-attaullah.github.io/Atta-Ullah-Portfolio/**
+
 A dark, editorial portfolio for **Atta Ullah** — AI & software engineer, BS Computer Science
 (Artificial Intelligence) at AWKUM.
 
