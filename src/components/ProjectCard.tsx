@@ -1,39 +1,38 @@
+import type { CSSProperties } from 'react'
+import { ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import type { Project } from '../data/projects'
-import StatusBadge from './StatusBadge'
+import { ProjectPoster } from './ProjectPoster'
 
-export default function ProjectCard({ project }: { project: Project }) {
+interface ProjectCardProps {
+  project: Project
+}
+
+export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <Link to={`/projects/${project.slug}`} className="project-card">
-      <div className="project-card-bar">
-        <div className="project-card-dots">
-          <span className="card-dot card-dot--red" />
-          <span className="card-dot card-dot--amber" />
-          <span className="card-dot card-dot--green" />
+    <Link
+      to={`/work/${project.slug}`}
+      className="work-card"
+      style={{ '--accent': project.accent } as CSSProperties}
+    >
+      <ProjectPoster project={project} />
+      <div className="work-card-body">
+        <div className="work-card-top">
+          <span className="work-card-index">{project.index}</span>
+          <span className="work-card-cat">{project.category}</span>
         </div>
-        <span className="project-card-title mono">{project.name.toLowerCase().replace(/\s+/g, '_')}</span>
-        <span className="project-card-year mono">{project.year}</span>
-      </div>
-
-      <div className="project-card-body">
-        {project.badge && <span className="project-badge mono">{project.badge}</span>}
-        <p className="project-card-tagline">{project.tagline}</p>
-        <div className="project-card-meta">
-          <StatusBadge status={project.status} label={project.statusLabel} />
-          <div className="project-card-stack">
-            {project.stack.slice(0, 3).map((tech) => (
-              <span key={tech} className="stack-pill mono">
-                {tech}
-              </span>
+        <h2 className="work-card-title">{project.name}</h2>
+        <p className="work-card-tagline">{project.tagline}</p>
+        <div className="work-card-foot">
+          <div className="work-card-stack">
+            {project.stack.slice(0, 3).map((item) => (
+              <span key={item}>{item}</span>
             ))}
-            {project.stack.length > 3 && (
-              <span className="stack-pill stack-pill--more mono">+{project.stack.length - 3}</span>
-            )}
           </div>
+          <span className="work-card-arrow">
+            <ArrowUpRight />
+          </span>
         </div>
-        <span className={`project-card-repo mono${project.repo ? '' : ' disabled'}`}>
-          {project.repo ? 'view source ↗' : 'source coming soon'}
-        </span>
       </div>
     </Link>
   )

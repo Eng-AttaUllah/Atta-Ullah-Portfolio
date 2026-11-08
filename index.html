@@ -2,44 +2,66 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#08090a" />
+    <meta name="color-scheme" content="dark" />
 
-    <title>Atta Ullah | AI Undergraduate &amp; Developer</title>
+    <title>Atta Ullah — AI & Software Engineer</title>
     <meta
       name="description"
-      content="Portfolio of Atta Ullah — Artificial Intelligence undergraduate, ML developer, and ZyroInterns intern. Projects, skills, and contact."
+      content="Atta Ullah is an AI and software engineer from Mardan, Pakistan — building machine learning, computer vision and full-stack products. BS Computer Science (AI) at AWKUM."
     />
     <meta name="author" content="Atta Ullah" />
     <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="%SITE_URL%" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Atta Ullah | AI Undergraduate & Developer" />
+    <meta property="og:url" content="%SITE_URL%" />
+    <meta property="og:title" content="Atta Ullah — AI & Software Engineer" />
     <meta
       property="og:description"
-      content="Portfolio of Atta Ullah — machine learning projects, internships, and more."
+      content="Machine learning, computer vision and full-stack products. Turning raw data into predictions, and ideas into working projects."
     />
-    <meta name="theme-color" content="#0a0e0c" />
+    <meta property="og:image" content="%SITE_URL%og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Atta Ullah — AI & Software Engineer" />
+    <meta
+      name="twitter:description"
+      content="Machine learning, computer vision and full-stack products from Mardan, Pakistan."
+    />
+    <meta name="twitter:image" content="%SITE_URL%og.png" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Atta Ullah",
+        "jobTitle": "AI & Software Engineer",
+        "description": "Computer Science (AI) undergraduate building machine learning, computer vision and full-stack products.",
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Abdul Wali Khan University Mardan"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mardan",
+          "addressRegion": "Khyber Pakhtunkhwa",
+          "addressCountry": "PK"
+        },
+        "email": "mailto:attikhan0344@gmail.com",
+        "url": "https://github.com/Eng-AttaUllah",
+        "sameAs": [
+          "https://github.com/Eng-AttaUllah",
+          "https://www.linkedin.com/in/attaullah",
+          "https://www.instagram.com/realattaullahkhan/"
+        ]
+      }
+    </script>
   </head>
   <body>
-    <noscript>
-      <div style="padding: 20px; font-family: sans-serif; max-width: 800px; margin: 0 auto; color: #333; line-height: 1.6;">
-        <h1>Atta Ullah | AI Undergraduate &amp; Developer</h1>
-        <p><strong>Email:</strong> attikhan0344@gmail.com | <strong>Phone:</strong> +92 319-2527926 | <strong>GitHub:</strong> github.com/Eng-AttaUllah</p>
-        <p>
-          Atta Ullah is an Artificial Intelligence undergraduate focused on machine learning,
-          data-driven problem solving, and building practical AI projects. View the site with
-          JavaScript enabled for the full experience.
-        </p>
-      </div>
-    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
