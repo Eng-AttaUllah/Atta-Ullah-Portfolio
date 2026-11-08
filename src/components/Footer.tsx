@@ -42,9 +42,8 @@ export function Footer() {
             Let&apos;s build something <em>worth shipping.</em>
           </h2>
           <p className="contact-lede">
-            I&apos;m open to AI/ML internships, junior engineering roles, and interesting
-            collaborations. If you have a problem that needs a model — or a product that needs a
-            builder — my inbox is open.
+            Got a problem that needs a model, or a product that needs a builder? My inbox is open.
+            Or just say hello — I read everything.
           </p>
 
           <div className="contact-email-row">
@@ -87,11 +86,13 @@ export function Footer() {
           </div>
         </Reveal>
 
+        <div className="footer-sign hand">made by hand, powered by chai.</div>
+
         <div className="footer-bottom">
           <div className="footer-group">
             <span>© 2026 {site.name}</span>
             <span>·</span>
-            <span>Built with React, Tailwind &amp; Motion</span>
+            <span>Built by a human · React, Tailwind &amp; Motion</span>
           </div>
           <div className="footer-group">
             <Clock />

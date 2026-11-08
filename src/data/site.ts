@@ -68,10 +68,25 @@ export const nav = [
 ]
 
 export const stats = [
-  { value: '3.26', label: 'CGPA / 4.00', detail: 'AWKUM · BS CS (AI)' },
-  { value: '05', label: 'Shipped projects', detail: 'AI, vision & web' },
-  { value: '07', label: 'Certifications', detail: 'Coursera & industry' },
-  { value: '02', label: 'Internships', detail: 'AI/ML · Frontend' },
+  { value: '3.26', label: 'CGPA', detail: 'BS CS (AI) · AWKUM' },
+  { value: '05', label: 'Projects shipped', detail: 'AI, vision & web' },
+  { value: '07', label: 'Certificates', detail: 'Coursera & co.' },
+  { value: '02', label: 'Internships', detail: 'AI/ML · frontend' },
+]
+
+export const toolkit = [
+  'Python',
+  'scikit-learn',
+  'TensorFlow',
+  'OpenCV',
+  'NumPy',
+  'Pandas',
+  'React',
+  'Next.js',
+  'TypeScript',
+  'Tailwind',
+  'SQL',
+  'Git',
 ]
 
 export const marqueeItems = [
@@ -107,8 +122,8 @@ export const skillGroups = [
 ]
 
 export const nowItems = [
-  { label: 'Building', value: 'AdVeto — on-device ad-risk detection' },
-  { label: 'Studying', value: 'BS CS (AI) · 5th semester · AWKUM' },
-  { label: 'Learning', value: 'Applied ML, vision & shipping products' },
-  { label: 'Open to', value: 'AI/ML internships & junior roles' },
+  { label: 'Building', value: 'AdVeto', icon: 'hammer' as const },
+  { label: 'Studying', value: 'BS CS (AI), AWKUM', icon: 'cap' as const },
+  { label: 'Learning', value: 'vision + product', icon: 'sparkles' as const },
+  { label: 'Open to', value: 'internships & junior roles', icon: 'inbox' as const },
 ]

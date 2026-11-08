@@ -5,6 +5,7 @@ import '@fontsource-variable/space-grotesk'
 import '@fontsource-variable/jetbrains-mono'
 import '@fontsource/instrument-serif/400.css'
 import '@fontsource/instrument-serif/400-italic.css'
+import '@fontsource-variable/caveat'
 import './styles/index.css'
 import App from './App'
 

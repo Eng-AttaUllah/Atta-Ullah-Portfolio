@@ -24,9 +24,8 @@ export default function Work() {
             All <em>work</em>.
           </h1>
           <p className="page-lede">
-            Five projects across machine learning, computer vision and full-stack web. Some are
-            shipped, some are in progress — all of them were built to answer a question I actually
-            had.
+            Five projects across ML, vision and web — each one started as a small annoyance I
+            couldn&apos;t let go.
           </p>
         </div>
       </section>

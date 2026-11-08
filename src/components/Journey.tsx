@@ -1,4 +1,4 @@
-import { Download } from 'lucide-react'
+import { Briefcase, Download, GraduationCap, Users } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { timeline } from '../data/about'
 import { Reveal } from './Reveal'
@@ -7,6 +7,12 @@ const typeLabel = {
   experience: 'Experience',
   education: 'Education',
   activity: 'Community',
+}
+
+const typeIcon = {
+  experience: Briefcase,
+  education: GraduationCap,
+  activity: Users,
 }
 
 export function Journey() {
@@ -23,11 +29,7 @@ export function Journey() {
             <h2 className="h2">
               The road so <em>far</em>.
             </h2>
-            <p>
-              Two internships, a final-year AI project, an open-source release, and a degree in
-              progress. The through-line: learning by shipping, then making the next thing a little
-              better.
-            </p>
+            <p>Still early. Still shipping. That&apos;s most of the story.</p>
             <Link to="/resume" className="btn btn--ghost btn--small">
               <Download />
               Full résumé
@@ -35,30 +37,34 @@ export function Journey() {
           </div>
 
           <div className="timeline">
-            {timeline.map((item) => (
-              <Reveal key={`${item.year}-${item.role}`}>
-                <div className="timeline-item">
-                  <div className="timeline-head">
-                    <span className="timeline-year">{item.year}</span>
-                    <span className={`timeline-type timeline-type--${item.type}`}>
-                      {typeLabel[item.type]}
-                    </span>
-                  </div>
-                  <h3 className="timeline-role">{item.role}</h3>
-                  <div className="timeline-org">{item.org}</div>
-                  <p className="timeline-detail">{item.detail}</p>
-                  {item.tags ? (
-                    <div className="timeline-tags">
-                      {item.tags.map((tag) => (
-                        <span className="pill" key={tag}>
-                          {tag}
-                        </span>
-                      ))}
+            {timeline.map((item) => {
+              const Icon = typeIcon[item.type]
+              return (
+                <Reveal key={`${item.year}-${item.role}`}>
+                  <div className="timeline-item">
+                    <div className="timeline-head">
+                      <span className="timeline-year">{item.year}</span>
+                      <span className={`timeline-type timeline-type--${item.type}`}>
+                        <Icon aria-hidden="true" />
+                        {typeLabel[item.type]}
+                      </span>
                     </div>
-                  ) : null}
-                </div>
-              </Reveal>
-            ))}
+                    <h3 className="timeline-role">{item.role}</h3>
+                    <div className="timeline-org">{item.org}</div>
+                    <p className="timeline-detail">{item.detail}</p>
+                    {item.tags ? (
+                      <div className="timeline-tags">
+                        {item.tags.map((tag) => (
+                          <span className="pill" key={tag}>
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    ) : null}
+                  </div>
+                </Reveal>
+              )
+            })}
           </div>
         </div>
       </div>

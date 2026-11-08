@@ -1,5 +1,51 @@
-import type { ReactNode } from 'react'
-import { ArrowLeft, ArrowUpRight, ExternalLink, Package } from 'lucide-react'
+import type { CSSProperties, ReactNode } from 'react'
+import {
+  ArrowLeft,
+  ArrowUpRight,
+  BadgeCheck,
+  BellRing,
+  Binary,
+  Boxes,
+  Brain,
+  Calculator,
+  Camera,
+  ClipboardList,
+  Cpu,
+  Crop,
+  Database,
+  Eye,
+  ExternalLink,
+  Feather,
+  Gauge,
+  GitBranch,
+  GitMerge,
+  HardDrive,
+  HardDriveDownload,
+  ImageDown,
+  Keyboard,
+  Layers,
+  MailCheck,
+  MessageCircleQuestion,
+  MessageSquare,
+  MousePointerClick,
+  Package,
+  Pencil,
+  Plus,
+  Radar,
+  RefreshCw,
+  Route,
+  ScanText,
+  Search,
+  ShieldAlert,
+  ShieldCheck,
+  SlidersHorizontal,
+  Sparkles,
+  Target,
+  Undo2,
+  UserSearch,
+  WifiOff,
+  type LucideIcon,
+} from 'lucide-react'
 import { Link, useParams } from 'react-router-dom'
 import { ProjectPoster } from '../components/ProjectPoster'
 import { SocialIcon } from '../components/SocialIcon'
@@ -7,6 +53,29 @@ import type { ProjectLink } from '../data/projects'
 import { getNextProject, getProject, projects } from '../data/projects'
 import { usePageTitle } from '../lib/usePageTitle'
 import NotFound from './NotFound'
+
+const highlightIcons: Record<string, LucideIcon[]> = {
+  adveto: [Layers, Cpu, ShieldCheck, ShieldAlert],
+  'theft-detection': [Radar, GitBranch, Gauge, BellRing],
+  'ai-shopkeeper': [WifiOff, ClipboardList, Sparkles, MousePointerClick],
+  daymark: [Feather, HardDrive, ImageDown, Keyboard],
+  'spam-detector': [Target, Boxes, RefreshCw, SlidersHorizontal],
+}
+
+const pipelineIcons: Record<string, LucideIcon[]> = {
+  adveto: [Camera, Crop, ScanText, GitMerge, ShieldCheck, ShieldAlert],
+  'theft-detection': [Camera, UserSearch, Route, Eye, Gauge, BellRing],
+  'ai-shopkeeper': [
+    MessageCircleQuestion,
+    Calculator,
+    ClipboardList,
+    BadgeCheck,
+    Database,
+    HardDriveDownload,
+  ],
+  daymark: [Plus, HardDrive, Search, Pencil, Undo2, RefreshCw],
+  'spam-detector': [MessageSquare, Sparkles, Binary, Brain, SlidersHorizontal, MailCheck],
+}
 
 function LinkIcon({ kind }: { kind: ProjectLink['kind'] }): ReactNode {
   if (kind === 'github') return <SocialIcon icon="github" />
@@ -22,9 +91,14 @@ export default function ProjectDetail() {
   if (!project) return <NotFound />
 
   const next = getNextProject(project.slug)
+  const highlightGlyphs = highlightIcons[project.slug] ?? []
+  const pipelineGlyphs = pipelineIcons[project.slug] ?? []
 
   return (
-    <div className="container detail-page">
+    <div
+      className="container detail-page"
+      style={{ '--accent': project.accent } as CSSProperties}
+    >
       <Link to="/work" className="back-link">
         <ArrowLeft />
         All work
@@ -72,7 +146,7 @@ export default function ProjectDetail() {
 
       <div className="detail-body">
         <div className="detail-copy">
-          <h2>Overview</h2>
+          <h2>The short version</h2>
           <p>{project.description}</p>
 
           <div className="metrics-strip">
@@ -84,23 +158,37 @@ export default function ProjectDetail() {
             ))}
           </div>
 
-          <h2>What makes it interesting</h2>
+          <h2>The good bits</h2>
           <ul className="highlight-list">
-            {project.highlights.map((highlight) => (
-              <li key={highlight}>{highlight}</li>
-            ))}
+            {project.highlights.map((highlight, index) => {
+              const Icon = highlightGlyphs[index] ?? Sparkles
+              return (
+                <li key={highlight}>
+                  <span className="highlight-icon" aria-hidden="true">
+                    <Icon />
+                  </span>
+                  <span>{highlight}</span>
+                </li>
+              )
+            })}
           </ul>
 
           {project.pipeline ? (
             <div className="pipeline">
-              <h2>How it works</h2>
+              <h2>Under the hood</h2>
               <div className="pipeline-flow">
-                {project.pipeline.map((step, index) => (
-                  <div className="pipeline-step" key={step}>
-                    <b>{String(index + 1).padStart(2, '0')}</b>
-                    <span>{step}</span>
-                  </div>
-                ))}
+                {project.pipeline.map((step, index) => {
+                  const Icon = pipelineGlyphs[index] ?? Sparkles
+                  return (
+                    <div className="pipeline-step" key={step}>
+                      <div className="pipeline-node" aria-hidden="true">
+                        <Icon />
+                      </div>
+                      <b>{String(index + 1).padStart(2, '0')}</b>
+                      <span>{step}</span>
+                    </div>
+                  )
+                })}
               </div>
             </div>
           ) : null}

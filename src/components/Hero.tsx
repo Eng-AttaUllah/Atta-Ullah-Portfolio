@@ -29,7 +29,7 @@ export function Hero() {
         <div className="hero-main">
           <motion.div className="hero-kicker mono" {...fade(0.05)}>
             <span className="status-dot" />
-            <span>Available · 2026</span>
+            <span>Open to work · 2026</span>
             <span className="slash">/</span>
             <span className="desktop-only">{site.role}</span>
           </motion.div>
@@ -47,9 +47,8 @@ export function Hero() {
           </h1>
 
           <motion.p className="hero-lede" {...fade(0.36)}>
-            I&apos;m <strong>{site.name}</strong> — an AI undergraduate and builder from Mardan,
-            Pakistan. I turn messy signals into models that work, and models into products people
-            actually use.
+            I&apos;m <strong>{site.name}</strong> — an AI undergraduate from Mardan. I make models
+            that catch spam, spot theft and read ads — then build the interfaces around them.
           </motion.p>
 
           <motion.div className="hero-actions" {...fade(0.44)}>
@@ -110,6 +109,7 @@ export function Hero() {
                 <div>
                   <strong>{site.name}</strong>
                   <span>{site.role}</span>
+                  <span className="portrait-note hand">probably debugging</span>
                 </div>
                 <Clock seconds />
               </div>

@@ -1,7 +1,5 @@
 export const bio = [
-  "I'm Atta Ullah, an Artificial Intelligence undergraduate at Abdul Wali Khan University Mardan. I like the part of software where data stops being numbers and starts becoming a decision — a classifier that catches spam, a camera that notices a theft, a model that reads an ad the way a teenager would.",
-  'My core stack is Python for machine learning — scikit-learn, Pandas, NumPy, TensorFlow and OpenCV — and TypeScript, React and Next.js for the product layer. I care about the unglamorous parts too: tests, offline behaviour, privacy, and what happens when the model is wrong.',
-  'Between August and October 2026 I completed two internships at ZyroInterns, one in AI/ML and one in frontend development. I have also organised a technology event at AWKUM and published an open-source documentation tool on PyPI.',
+  "I'm Atta — an AI undergraduate from Mardan who likes quiet, useful software. Give me a messy signal and I'll try to turn it into something people can actually use.",
 ]
 
 export interface EducationEntry {
@@ -37,33 +35,43 @@ export const education: EducationEntry[] = [
 
 export interface Certification {
   name: string
+  short?: string
   issuer: string
   period: string
   honor?: boolean
 }
 
 export const certifications: Certification[] = [
-  { name: 'HTML & CSS Crash Course', issuer: 'Scrimba', period: 'Mar 2025' },
+  { name: 'HTML & CSS Crash Course', short: 'HTML & CSS', issuer: 'Scrimba', period: 'Mar 2025' },
   { name: 'AI For Everyone', issuer: 'DeepLearning.AI', period: 'Mar 2025' },
   {
     name: 'Work Smarter with Microsoft PowerPoint',
+    short: 'PowerPoint',
     issuer: 'Microsoft',
     period: 'Feb 2025',
     honor: true,
   },
-  { name: 'Marketing Analytics Foundation', issuer: 'Meta', period: 'Jan 2025' },
+  {
+    name: 'Marketing Analytics Foundation',
+    short: 'Marketing Analytics',
+    issuer: 'Meta',
+    period: 'Jan 2025',
+  },
   {
     name: 'Word Forms and Simple Present Tense',
-    issuer: 'University of California, Irvine',
+    short: 'Word Forms',
+    issuer: 'UC Irvine',
     period: 'Feb 2025',
   },
   {
     name: 'AI / ML Internship',
+    short: 'AI / ML Intern',
     issuer: 'ZyroInterns',
     period: 'Aug — Oct 2026',
   },
   {
     name: 'Frontend Development Internship',
+    short: 'Frontend Intern',
     issuer: 'ZyroInterns',
     period: 'Aug — Oct 2026',
   },
@@ -84,17 +92,15 @@ export const timeline: TimelineEntry[] = [
     year: '2026',
     role: 'AI / ML Intern',
     org: 'ZyroInterns',
-    detail:
-      'Worked across the machine-learning lifecycle — data preparation, model training, evaluation and reporting — in a remote internship programme.',
-    tags: ['Python', 'ML', 'Reporting'],
+    detail: 'Trained and evaluated models. Mostly cleaned data, honestly.',
+    tags: ['Python', 'ML'],
   },
   {
     type: 'experience',
     year: '2026',
     role: 'Frontend Development Intern',
     org: 'ZyroInterns',
-    detail:
-      'Built and shipped responsive interfaces, working with component-driven frontend patterns, version control and code review.',
+    detail: 'Shipped responsive interfaces and learned to love code review.',
     tags: ['HTML/CSS', 'JavaScript', 'Git'],
   },
   {
@@ -102,16 +108,14 @@ export const timeline: TimelineEntry[] = [
     year: '2026',
     role: 'Organiser — “YouTube Automation”',
     org: 'Technology & Innovation Society, AWKUM',
-    detail:
-      'Organised a university technology event under the AWKUM Student Council and the Office of the Provost.',
+    detail: 'Ran a campus tech event with the Innovation Society.',
   },
   {
     type: 'education',
     year: '2023 — now',
     role: 'BS Computer Science (AI)',
     org: 'Abdul Wali Khan University Mardan',
-    detail:
-      '5th semester · CGPA 3.26 / 4.00 · coursework across programming, data structures, databases, networks and artificial intelligence.',
+    detail: 'Fifth semester. CGPA 3.26. Still learning in public.',
     tags: ['CGPA 3.26', 'AWKUM'],
   },
   {
@@ -119,14 +123,14 @@ export const timeline: TimelineEntry[] = [
     year: '2023',
     role: 'Intermediate — Pre-Engineering',
     org: 'The Quaid International Model College, Swabi',
-    detail: 'BISE Mardan · 948 / 1100 marks · A1 grade.',
+    detail: 'Pre-engineering, BISE Mardan.',
   },
   {
     type: 'education',
     year: '2021',
     role: 'Matriculation — Science',
     org: 'Al-Muslim Public School, Swabi',
-    detail: 'BISE Mardan · 946 / 1100 marks · A1 grade.',
+    detail: 'Science, BISE Mardan.',
   },
 ]
 
