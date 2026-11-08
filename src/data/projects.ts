@@ -63,7 +63,6 @@ export const projects: Project[] = [
       'Age policy',
       'Allow / cover / skip',
     ],
-    featured: true,
     note: 'Prototype. Not on the Play Store yet.',
   },
   {
