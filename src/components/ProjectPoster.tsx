@@ -1,10 +1,9 @@
 import type { CSSProperties } from 'react'
-import { FileCode, ListChecks, MailX, ScanEye, ScanLine, Store } from 'lucide-react'
+import { ListChecks, MailX, ScanEye, ScanLine, Store } from 'lucide-react'
 import type { Project } from '../data/projects'
 
 const icons = {
   adveto: ScanEye,
-  docsmith: FileCode,
   'theft-detection': ScanLine,
   'ai-shopkeeper': Store,
   daymark: ListChecks,

@@ -69,7 +69,7 @@ export const nav = [
 
 export const stats = [
   { value: '3.26', label: 'CGPA / 4.00', detail: 'AWKUM · BS CS (AI)' },
-  { value: '06', label: 'Shipped projects', detail: 'AI, vision & web' },
+  { value: '05', label: 'Shipped projects', detail: 'AI, vision & web' },
   { value: '07', label: 'Certifications', detail: 'Coursera & industry' },
   { value: '02', label: 'Internships', detail: 'AI/ML · Frontend' },
 ]
