@@ -362,9 +362,6 @@ ol {
   }
 }
 
-/* ==========================================================================
-   Scroll progress + cursor
-   ========================================================================== */
 .scroll-progress {
   position: fixed;
   inset: 0 0 auto;
@@ -373,21 +370,6 @@ ol {
   transform-origin: 0 50%;
   z-index: 150;
   pointer-events: none;
-}
-
-.cursor-glow {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 560px;
-  height: 560px;
-  margin: -280px 0 0 -280px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(215, 255, 62, 0.1), transparent 62%);
-  pointer-events: none;
-  z-index: 4;
-  mix-blend-mode: screen;
-  will-change: transform;
 }
 
 /* ==========================================================================
@@ -3333,9 +3315,6 @@ ol {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  .cursor-glow {
-    display: none !important;
-  }
 }
 
 /* ==========================================================================
@@ -3354,7 +3333,6 @@ ol {
   .site-nav,
   .mobile-menu,
   .scroll-progress,
-  .cursor-glow,
   .contact,
   .resume-actions,
   .skip-link,

@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import Lenis from 'lenis'
 import { useLocation } from 'react-router-dom'
-import { CursorGlow } from './CursorGlow'
 import { Footer } from './Footer'
 import { Nav } from './Nav'
 import { ScrollProgress } from './ScrollProgress'
@@ -60,7 +59,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         Skip to content
       </a>
       <ScrollProgress />
-      <CursorGlow />
       <Nav />
       <ScrollManager />
       <main id="main">{children}</main>
